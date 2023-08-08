@@ -1,0 +1,38 @@
+package questions;
+/**
+ * The AgeCalculator class calculates the age of a person based on their birth year
+ * and the current year.
+ */
+/**
+ * @author dell
+ */
+import java.util.Scanner;
+public class AgeCalculator {
+
+    /**
+     * The main method of the AgeCalculator class. It takes user input for the birth year,
+     * calculates the age, and then prints the result.
+     *
+     * @param args Command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        // Create a Scanner object to read user input from the console
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter their birth year
+        System.out.print("Enter your birth year: ");
+        int birthYear = scanner.nextInt();
+
+        // Get the current year using java.time.Year class
+        int currentYear = java.time.Year.now().getValue();
+
+        // Calculate the age by subtracting the birth year from the current year
+        int age = currentYear - birthYear;
+
+        // Print the calculated age to the console
+        System.out.println("Your age is: " + age);
+
+        // Close the Scanner object to release resources
+        scanner.close();
+    }
+}
